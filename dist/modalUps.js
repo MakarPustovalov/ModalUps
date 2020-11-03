@@ -26,20 +26,27 @@ window.onload = function() {
     toggleScroll();
   }
 
+  //Prevent closing if click on pop-up
+
   modalWindows.forEach(element => {
     element.onclick = event => {
       event.stopPropagation()
     }
   })
+
+  //Listeners for open-buttons
   
   openerModalButtons.forEach(element => {
-    element.addEventListener("click", function () {
+    element.addEventListener("click", event => {
+      event.preventDefault()
       const modalWindow = document.querySelector(`[modal-window="${element.getAttribute('open-modal-window')}"]`)
       modalWindow.style.display = "block"
       showOverlay();
       toggleScroll();
     });
   })
+
+  //Listeners for close-buttons
   
   closerModalButtons.forEach(element => {
     element.onclick = closeAllModalWindows;

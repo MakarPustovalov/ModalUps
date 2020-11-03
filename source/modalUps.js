@@ -19,7 +19,6 @@ window.onload = function() {
   }
   
   function closeAllModalWindows() {
-    event.preventDefault()
     modalWindows.forEach(element => {
       element.style.display = "none"
     })
@@ -27,11 +26,15 @@ window.onload = function() {
     toggleScroll();
   }
 
+  //Prevent closing if click on pop-up
+
   modalWindows.forEach(element => {
     element.onclick = event => {
       event.stopPropagation()
     }
   })
+
+  //Listeners for open-buttons
   
   openerModalButtons.forEach(element => {
     element.addEventListener("click", event => {
@@ -42,6 +45,8 @@ window.onload = function() {
       toggleScroll();
     });
   })
+
+  //Listeners for close-buttons
   
   closerModalButtons.forEach(element => {
     element.onclick = closeAllModalWindows;
