@@ -7,7 +7,7 @@ ____
  Краткое руководство/Quick guide
  
 ## En
-Move the files from the 'dist' folder to the project folder and connect them in `index.html`
+Move the files from the `dist` folder to the project folder and connect them in `index.html`
 Structure of modal windows:
 1. Overlay. Also plays the role of a wrapper, when you click on it, the pop-up window closes. Overlay is created with the `modal-overlay` attribute:
 ```html
