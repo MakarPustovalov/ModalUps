@@ -19,6 +19,7 @@ window.onload = function() {
   }
   
   function closeAllModalWindows() {
+    event.preventDefault()
     modalWindows.forEach(element => {
       element.style.display = "none"
     })
@@ -33,7 +34,8 @@ window.onload = function() {
   })
   
   openerModalButtons.forEach(element => {
-    element.addEventListener("click", function () {
+    element.addEventListener("click", event => {
+      event.preventDefault()
       const modalWindow = document.querySelector(`[modal-window="${element.getAttribute('open-modal-window')}"]`)
       modalWindow.style.display = "block"
       showOverlay();
