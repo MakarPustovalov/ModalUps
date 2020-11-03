@@ -15,7 +15,7 @@ Structure of modal windows:
 
 </div>
 ```
-2. Are placed inside overlay the modal window. They are created with the `modal-window=""` attribute. The attribute value is the name of the modal window. Markup:
+2. Modal windows are placed inside overlay. They are created with the `modal-window=""` attribute. The attribute value is the name of the modal window. Markup:
 ```html
 <div modal-overlay>
 
